@@ -622,30 +622,47 @@ background-image:url(../img/dd15bc239090850aaa82a07eef92d293.jpg)   ;
 }
 
 @media screen and (max-width: 768px) {
+    /* زرار الفتح يظهر في الموبايل */
+    .navbar #menu-open-button {
+        display: block;
+        background: none;
+        border: none;
+        color: #FDF5E6;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 
+    /* القائمة نفسها */
     .nav-menu {
         position: fixed;
-        left: -100%;
+        left: -100%; /* مستخبية بره الشاشة */
         top: 0;
         flex-direction: column;
         background-color: #3D0C02; 
         width: 100%;
         height: 100vh;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.4s ease; /* حركة ناعمة */
         justify-content: center;
         z-index: 1000;
+        gap: 30px;
     }
 
-    .nav-menu.show-menu { 
+    /* لما الـ body ياخد الكلاس من الـ JS */
+    body.show-mobile-menu .nav-menu {
         left: 0;
     }
 
-    #menu-open-button {
+    /* زرار القفل جوه المنيو */
+    #menu-close-button {
         display: block;
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #FDF5E6;
+        font-size: 2rem;
     }
 
     
@@ -699,6 +716,7 @@ background-image:url(../img/dd15bc239090850aaa82a07eef92d293.jpg)   ;
         gap: 15px;
     }
 }
+
 
 
 
